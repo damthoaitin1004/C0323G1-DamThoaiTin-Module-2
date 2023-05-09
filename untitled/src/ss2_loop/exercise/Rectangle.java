@@ -1,4 +1,4 @@
-package ss2_vong_lap.bai_tap;
+package ss2_loop.exercise;
 
 import java.util.Scanner;
 

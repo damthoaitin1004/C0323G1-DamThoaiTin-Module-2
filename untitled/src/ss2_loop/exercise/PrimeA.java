@@ -1,4 +1,4 @@
-package ss2_vong_lap.bai_tap;
+package ss2_loop.exercise;
 
 public class PrimeA {
     public static void main(String[] args) {

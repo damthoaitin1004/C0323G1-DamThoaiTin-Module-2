@@ -1,8 +1,8 @@
-package ss1_introduction_to_java.bai_tap;
+package ss1_introduction_to_java.exercise;
 
 import java.util.Scanner;
 
-public class Untitled {
+public class Change {
     public static void main(String[] args){
         double vnd = 23000;
         double usd;
