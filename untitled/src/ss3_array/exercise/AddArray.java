@@ -21,21 +21,25 @@ public class AddArray {
         addNumber = Integer.parseInt(scanner.nextLine());
         System.out.print("Enter the index you want to add: ");
         indexNumber = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < array.length; i++) {
-            if (indexNumber == i) {
-                for (int j = array.length - 1; j > i; j--) {
-                    array[j] = array[j - 1];
+        if (indexNumber >= 0) {
+            for (int i = 0; i < array.length; i++) {
+                if (indexNumber == i) {
+                    for (int j = array.length - 1; j > i; j--) {
+                        array[j] = array[j - 1];
+                    }
                 }
             }
-        }
 
-        for (int i = 0; i < array.length; i++) {
-            if (indexNumber == i) {
-                array[i] = addNumber;
+            for (int i = 0; i < array.length; i++) {
+                if (indexNumber == i) {
+                    array[i] = addNumber;
+                }
             }
-        }
-        for (int j = 0; j < array.length; j++) {
-            System.out.println(array[j]);
+            for (int j = 0; j < array.length; j++) {
+                System.out.println(array[j]);
+            }
+        } else {
+            System.out.println("Unable to insert element into array.");
         }
     }
 }
