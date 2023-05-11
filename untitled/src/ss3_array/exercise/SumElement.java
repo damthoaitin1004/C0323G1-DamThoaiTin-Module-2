@@ -22,11 +22,7 @@ public class SumElement {
         indexSum = Integer.parseInt(scanner.nextLine());
         sum = 0;
         for (int i = 0; i < size; i++) {
-            if (indexSum == i) {
-                for (int j = 0; j < array[i].length; j++) {
-                    sum += array[i][j];
-                }
-            }
+                 sum += array[i][indexSum];
         }
         System.out.println("Sum of the column is: " + sum);
     }
