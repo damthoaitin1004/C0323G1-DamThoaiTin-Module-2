@@ -1,4 +1,4 @@
-package ss3_oop.exercise.equation;
+package ss4_oop.exercise.equation;
 
 import java.util.Scanner;
 

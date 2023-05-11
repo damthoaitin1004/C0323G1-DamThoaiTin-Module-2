@@ -1,4 +1,4 @@
-package ss3_oop.exercise.machine_fan;
+package ss4_oop.exercise.machine_fan;
 
 import java.util.Scanner;
 

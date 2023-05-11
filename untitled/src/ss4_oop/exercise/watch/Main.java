@@ -1,4 +1,4 @@
-package ss3_oop.exercise.watch;
+package ss4_oop.exercise.watch;
 
 import java.util.Scanner;
 

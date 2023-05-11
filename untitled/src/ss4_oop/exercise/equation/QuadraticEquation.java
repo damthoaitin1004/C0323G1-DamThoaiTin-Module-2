@@ -1,4 +1,4 @@
-package ss3_oop.exercise.equation;
+package ss4_oop.exercise.equation;
 
 public class QuadraticEquation {
     double numberA, numberB, numberC;
