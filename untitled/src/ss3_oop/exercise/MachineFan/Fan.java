@@ -1,10 +1,8 @@
 package ss3_oop.exercise.MachineFan;
 
 public class Fan {
-    final int SLOW = 1;
-    final int MEDIUM = 2;
-    final int FAST = 3;
-    int speed = MEDIUM;
+
+    int speed = 2;
     boolean on = false;
     double radius = 5;
     String color = "blue";
@@ -42,6 +40,8 @@ public class Fan {
     public void SetColor(String color){
         this.color = color;
     }
+
+
     public String toString() {
         return "Fan {" +" fan is "+on+
                 " speed= '" + speed + '\'' +
