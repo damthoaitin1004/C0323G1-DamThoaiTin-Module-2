@@ -1,4 +1,4 @@
-package ss3_oop.exercise.MachineFan;
+package ss3_oop.exercise.machine_fan;
 
 public class Fan {
 
