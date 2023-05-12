@@ -1,4 +1,4 @@
-package ss5_access_modifier_and_static.exercise.Student_access_modifier;
+package ss5_access_modifier_and_static.exercise.student_access_modifier;
 
 import java.util.Scanner;
 

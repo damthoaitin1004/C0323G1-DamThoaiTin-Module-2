@@ -1,4 +1,4 @@
-package ss5_access_modifier_and_static.exercise.Student_access_modifier;
+package ss5_access_modifier_and_static.exercise.student_access_modifier;
 
 public class Student {
     private String name = "John";
@@ -14,9 +14,8 @@ public class Student {
     public void setClasses(String classes) {
         this.classes = classes;
     }
-    public String toString(){
-        return "Join {" +" name is "+name+
-                ", area= " + classes +
-                '}';
+
+    public String toString() {
+        return "Join {" + " name is " + name + ", area= " + classes + '}';
     }
 }
