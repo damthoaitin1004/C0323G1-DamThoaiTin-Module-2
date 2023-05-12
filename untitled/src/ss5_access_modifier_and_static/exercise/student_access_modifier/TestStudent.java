@@ -13,6 +13,6 @@ public class TestStudent {
         System.out.println("change class information ");
         String newClasses = scanner.nextLine();
         john.setClasses(newClasses);
-         System.out.println(john.toString());
+        System.out.println(john.toString());
     }
 }

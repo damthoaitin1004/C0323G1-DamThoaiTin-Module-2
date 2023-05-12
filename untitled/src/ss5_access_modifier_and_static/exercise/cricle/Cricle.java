@@ -31,8 +31,9 @@ public class Cricle {
     public double getArea() {
         return radius * radius * PI;
     }
-    public String toString(){
-        return "Fan {" +" radius is "+getRadius()+
+
+    public String toString() {
+        return "Fan {" + " radius is " + getRadius() +
                 ", area= " + getArea() +
                 '}';
     }

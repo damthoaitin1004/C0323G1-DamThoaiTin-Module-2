@@ -2,8 +2,9 @@ package ss4_oop.exercise.equation;
 
 public class QuadraticEquation {
     double numberA;
-double numberB;
-double numberC;
+    double numberB;
+    double numberC;
+
     public QuadraticEquation(double numberA, double numberB, double numberC) {
         this.numberA = numberA;
         this.numberB = numberB;
@@ -11,7 +12,7 @@ double numberC;
     }
 
     public double getDelta() {
-        return (this.numberB * this.numberB) -( 4 * this.numberA * this.numberC);
+        return (this.numberB * this.numberB) - (4 * this.numberA * this.numberC);
     }
 
     public double getSameRoot() {
@@ -23,6 +24,6 @@ double numberC;
     }
 
     public double getRootB() {
-        return( (-numberB) - Math.pow(getDelta(), 0.5))/ 2 * numberA;
+        return ((-numberB) - Math.pow(getDelta(), 0.5)) / 2 * numberA;
     }
 }
