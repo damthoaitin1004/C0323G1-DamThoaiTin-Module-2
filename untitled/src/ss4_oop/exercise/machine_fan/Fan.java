@@ -1,7 +1,6 @@
 package ss4_oop.exercise.machine_fan;
 
 public class Fan {
-
     int speed = 2;
     boolean on = false;
     double radius = 5;
