@@ -8,6 +8,9 @@ public class CharOfString {
         int count = 0;
         System.out.println("Enter a string: ");
         String enterString = scanner.next();
+
+
+
         System.out.println("Enter the character to count: ");
         char character = scanner.next().charAt(0);
         for (int i = 0; i < enterString.length(); i++) {
