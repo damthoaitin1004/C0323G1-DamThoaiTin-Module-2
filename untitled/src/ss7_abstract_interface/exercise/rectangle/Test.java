@@ -17,7 +17,8 @@ public class Test {
             number = Double.parseDouble(scanner.nextLine());
             if ((number > 0) && (number <= 100)) {
                 System.out.println(shape.toString() + " Area is: " + shape.getArea());
-                System.out.println("Area after change is: "+shape.resizeable(number));
+                shape.resizeable(number);
+                System.out.println("Area after change is: "+shape.getArea());
 
             }else {
                 System.out.println("You entered it wrong");
