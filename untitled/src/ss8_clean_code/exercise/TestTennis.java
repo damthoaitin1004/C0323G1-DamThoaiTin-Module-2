@@ -1,5 +1,6 @@
 package ss8_clean_code.exercise;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestTennis {
