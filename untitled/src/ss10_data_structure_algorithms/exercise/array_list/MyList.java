@@ -72,12 +72,12 @@ public class MyList<E> {
 
 
     public boolean add(E o) {
-        boolean flag = false;
-        if (size < elements.length) {
-            flag = true;
-            add(size, o);
-        }
-        return flag;
+      if (size==elements.length){
+          elements = Arrays.copyOf(elements, elements.length * 2);
+      }
+        elements[size]=o;
+        size++;
+          return true;
     }
 
 
@@ -103,4 +103,6 @@ public class MyList<E> {
         size = 0;
     }
 
-}
+    }
+
+

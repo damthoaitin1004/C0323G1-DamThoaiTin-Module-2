@@ -43,7 +43,12 @@ public class TestMyList {
         for (int i = 0; i < myList.size(); i++) {
             System.out.println("Index " + i + " of myList is: " + myList.get(i));
         }
-        myList.clear();
-        System.out.println(myList.size());
+//        myList.clear();
+//        System.out.println(myList.size());
+        myList.add(6);
+        System.out.println("------");
+        for (int i = 0; i < myList.size(); i++) {
+            System.out.println("Index " + i + " of myList is: " + myList.get(i));
+        }
     }
 }
