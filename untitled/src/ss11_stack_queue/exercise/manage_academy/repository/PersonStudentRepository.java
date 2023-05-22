@@ -9,7 +9,7 @@ import java.util.List;
 public class PersonStudentRepository implements IPersonRepository{
     private static List<Person> student = new ArrayList<>();
     static {
-       student.add(new Student("Dam Thoai TIn",true,"0325",9,"0323g1"));
+       student.add(new Student("Dam Thoai Tin",true,"0325",9,"0323g1"));
        student.add(new Student("Dam Vinh Hung",false,"03265",9,"0323g1"));
 
     }
