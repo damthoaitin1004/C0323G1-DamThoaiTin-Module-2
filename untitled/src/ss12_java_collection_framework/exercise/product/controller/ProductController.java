@@ -6,8 +6,8 @@ import ss12_java_collection_framework.exercise.product.service.ProductService;
 import java.util.Scanner;
 
 public class ProductController {
-    static Scanner scanner = new Scanner(System.in);
-    static IProductService productService = new ProductService();
+    private static Scanner scanner = new Scanner(System.in);
+    private static IProductService productService = new ProductService();
 
     public static void menu() {
         do {
