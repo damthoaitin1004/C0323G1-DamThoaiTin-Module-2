@@ -27,9 +27,7 @@ public class SettingInsertSort {
         int x;
         for (int i = 1; i < arr.length; i++) {
             x = arr[i];
-
             pos = i;
-
             while (pos > 0 && x < arr[pos - 1]) {
                 arr[pos] = arr[pos - 1];
                 pos--;

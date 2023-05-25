@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class StudentService implements IPersonService {
     private static Scanner scanner = new Scanner(System.in);
     private static IPersonRepository studentRepository = new PersonStudentRepository();
-    boolean flag = true;
+    boolean flag = false;
 
 
     @Override
@@ -40,19 +40,33 @@ public class StudentService implements IPersonService {
 
         System.out.print("Nhập tên học viên: ");
         String name = scanner.nextLine();
-        System.out.print("Chọn giới tính cho học viên: ");
-        System.out.print("1.Nam ");
-        System.out.print("2.Nữ ");
-        int gender = Integer.parseInt(scanner.nextLine());
-        if (gender == 2) {
-            flag = false;
+        while (true) {
+            try {
+                System.out.print("Chọn giới tính cho học viên: ");
+                System.out.print("1.Nam ");
+                System.out.print("2.Nữ ");
+                int gender = Integer.parseInt(scanner.nextLine());
+                if (gender == 1) {
+                    flag = true;
+                }
+                break;
+
+            } catch (NumberFormatException catchNumber) {
+                System.out.println("Nhập sai rồi xin mời nhập lại");
+            }
         }
         System.out.println("Nhập lớp cho học viên: ");
         String classes = scanner.nextLine();
-
-        System.out.print("Nhập điểm cho học viên: ");
-        int point = Integer.parseInt(scanner.nextLine());
-
+        int point = 0;
+        while (true) {
+            try {
+                System.out.print("Nhập điểm cho học viên: ");
+                point = Integer.parseInt(scanner.nextLine());
+                break;
+            } catch (NumberFormatException numberFormatException) {
+                System.out.println("Nhập sai rồi vui lòng nhập lại");
+            }
+        }
         Person studentsNew = new Student(name, flag, code, point, classes);
         studentRepository.addPerson(studentsNew);
         System.out.println("Thêm mới thành công");
@@ -67,12 +81,19 @@ public class StudentService implements IPersonService {
             System.out.println("Không có sản phẩm");
         } else {
             System.out.println("Bạn có muốn xóa học viên với tên: " + studentDele.getName());
-            System.out.println("1. Xóa");
-            System.out.println("2. Suy nghĩ lại");
-            int choice = Integer.parseInt(scanner.nextLine());
-            if (choice == 1) {
-                studentRepository.removePerson(studentDele);
-                System.out.println("Xóa thành công");
+            while (true) {
+                try {
+                    System.out.println("1. Xóa");
+                    System.out.println("2. Suy nghĩ lại");
+                    int choice = Integer.parseInt(scanner.nextLine());
+                    if (choice == 1) {
+                        studentRepository.removePerson(studentDele);
+                        System.out.println("Xóa thành công");
+                    }
+                    break;
+                } catch (NumberFormatException catchChoise) {
+                    System.out.println("Nhập sai rồi xin mời nhập lại");
+                }
             }
         }
 

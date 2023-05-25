@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class TeacherService implements IPersonService {
     private static Scanner scanner = new Scanner(System.in);
     private static IPersonRepository teacherRepository = new PersonTeacherRepository();
-    boolean flag = true;
+    boolean flag = false;
 
     @Override
     public void displayAll() {
@@ -37,12 +37,19 @@ public class TeacherService implements IPersonService {
             }}
         System.out.print("Nhập tên giáo viên: ");
         String name = scanner.nextLine();
-        System.out.print("Chọn giới tính cho giáo viên: ");
-        System.out.print("1.Nam ");
-        System.out.print("2.Nữ ");
-        int gender = Integer.parseInt(scanner.nextLine());
-        if (gender == 2) {
-            flag = false;
+        while (true){
+            try {
+                System.out.print("Chọn giới tính cho giáo viên: ");
+                System.out.print("1.Nam ");
+                System.out.print("2.Nữ ");
+                int gender = Integer.parseInt(scanner.nextLine());
+                if (gender == 2) {
+                    flag = true;
+                    break;
+                }
+            } catch (NumberFormatException catchNum){
+                System.out.println("Nhập sai vui lòng nhập lại");
+            }
         }
         System.out.print("Chuyên môn của giáo viên là: ");
         String capacity = scanner.nextLine();
@@ -60,14 +67,21 @@ public class TeacherService implements IPersonService {
         if (teacherDele == null) {
             System.out.println("Không có sản phẩm");
         } else {
-            System.out.println("Bạn có muốn xóa học viên với tên: " + teacherDele.getName());
-            System.out.println("1. Xóa");
-            System.out.println("2. Suy nghĩ lại");
-            int choice = Integer.parseInt(scanner.nextLine());
-            if (choice == 1) {
-                teacherRepository.removePerson(teacherDele);
-                System.out.println("Xóa thành công");
-            }
+            while (true){
+                try {
+                    System.out.println("Bạn có muốn xóa học viên với tên: " + teacherDele.getName());
+                    System.out.println("1. Xóa");
+                    System.out.println("2. Suy nghĩ lại");
+                    int choice = Integer.parseInt(scanner.nextLine());
+                    if (choice == 1) {
+                        teacherRepository.removePerson(teacherDele);
+                        System.out.println("Xóa thành công");
+                    }
+                    break;
+                } catch (NumberFormatException choseFalse){
+                    System.out.println("Nhập sai rồi xin mời nhập lại");
+                }
+          }
         }
     }
 }

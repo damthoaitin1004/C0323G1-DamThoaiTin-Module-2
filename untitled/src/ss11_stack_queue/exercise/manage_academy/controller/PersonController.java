@@ -13,13 +13,25 @@ public class PersonController {
 
     public static void menu() {
         do {
-            System.out.println("---------------------------------------");
-            System.out.println("Lựa chọn chức năng: ");
-            System.out.println("1. Hiển thị ");
-            System.out.println("2. Thêm mới ");
-            System.out.println("3. Xóa ");
-            System.out.println("0. Thoát");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice=0;
+            do {
+                try {
+                    System.out.println("---------------------------------------");
+                    System.out.println("Lựa chọn chức năng: ");
+                    System.out.println("1. Hiển thị ");
+                    System.out.println("2. Thêm mới ");
+                    System.out.println("3. Xóa ");
+                    System.out.println("0. Thoát");
+                    choice = Integer.parseInt(scanner.nextLine());
+                    break;
+                }catch (NumberFormatException q){
+                    System.out.println("Người dùng nhập không phải là số ");
+                }catch (Exception e){
+                    System.out.println("Eror");
+                }
+
+            }while (true);
+
             switch (choice) {
                 case 1:
                     System.out.println("1.Xem thông tin học viên");
