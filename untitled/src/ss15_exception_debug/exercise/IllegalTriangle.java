@@ -12,10 +12,16 @@ public class IllegalTriangle {
                 System.out.println("Nhập canh a của tam giác ");
                 try {
                     enterNumberA = Float.parseFloat(scanner.nextLine());
+                    if (enterNumberA<0){
+                        throw new TriangleException("Sai định dạng");
+                    }
                     break;
                 } catch (NumberFormatException e) {
                     System.out.println("người dùng nhập ko phải là số");
-                }catch (Exception e) {
+                } catch (TriangleException e){
+                    System.out.println(e.getMessage());
+                    System.out.println("a phải là 1 số lớn hơn 0");
+                } catch (Exception e) {
                     System.out.println("Error");
                 }
             } while (true);
@@ -24,10 +30,17 @@ public class IllegalTriangle {
                 System.out.println("Nhập canh b của tam giác ");
                 try {
                     enterNumberB = Float.parseFloat(scanner.nextLine());
+                    if (enterNumberB<0){
+                        throw new TriangleException("Nhập sai định dạng");
+                    }
                     break;
                 } catch (NumberFormatException o){
                     System.out.println("Người dùng nhập không phải là số");
-                }catch (Exception i){
+                }catch (TriangleException o){
+                    System.out.println(o.getMessage());
+                    System.out.println("b phải là 1 số lớn hơn 0");
+                }
+                catch (Exception i){
                     System.out.println("Eror");
                 }
 
@@ -37,10 +50,17 @@ public class IllegalTriangle {
                  System.out.println("Nhập canh c cuủa tam giác ");
                  try {
                      enterNumberC = Float.parseFloat(scanner.nextLine());
+                     if (enterNumberC<0){
+                         throw new TriangleException("Sai định dạng");
+                     }
                      break;
                  } catch (NumberFormatException u){
                      System.out.println("Người dùng nhập không phải số");
-                 } catch (Exception p){
+                 }catch (TriangleException p){
+                     System.out.println(p.getMessage());
+                     System.out.println("c phải là 1 số lớn hơn 0");
+                 }
+                 catch (Exception p){
                      System.out.println("Eror");
                  }
 
@@ -59,7 +79,7 @@ public class IllegalTriangle {
     }
 
     public static boolean checkTriangle(float a, float b, float c) throws TriangleException {
-        if (a <= 0 || b <= 0 || c <= 0 || a > b + c || b > a + c || c > a + b) {
+        if (  a > b + c || b > a + c || c > a + b) {
             throw new TriangleException("Các cạnh tam giác không hợp lệ");
         }
         return true;
