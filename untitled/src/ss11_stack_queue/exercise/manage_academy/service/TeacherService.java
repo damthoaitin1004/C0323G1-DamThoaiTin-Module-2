@@ -1,7 +1,7 @@
 package ss11_stack_queue.exercise.manage_academy.service;
 
+import ss11_stack_queue.exercise.manage_academy.controller.InputException;
 import ss11_stack_queue.exercise.manage_academy.model.Person;
-import ss11_stack_queue.exercise.manage_academy.model.academy.Student;
 import ss11_stack_queue.exercise.manage_academy.model.academy.Teacher;
 import ss11_stack_queue.exercise.manage_academy.repository.IPersonRepository;
 import ss11_stack_queue.exercise.manage_academy.repository.PersonTeacherRepository;
@@ -46,9 +46,17 @@ public class TeacherService implements IPersonService {
                 if (gender == 2) {
                     flag = true;
                     break;
+                } else if (gender == 1) {
+                    break;
+                } else {
+                    throw new InputException("Sai chức năng vui lòng nhập lại");
                 }
-            } catch (NumberFormatException catchNum){
+            } catch (InputException i) {
+                i.getMessage();
+            } catch (NumberFormatException catchNum) {
                 System.out.println("Nhập sai vui lòng nhập lại");
+            } catch (Exception e) {
+                System.out.println("Error");
             }
         }
         System.out.print("Chuyên môn của giáo viên là: ");

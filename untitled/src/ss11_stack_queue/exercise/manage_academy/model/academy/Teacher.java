@@ -42,4 +42,7 @@ private String capacity;
                 "capacity=" + capacity +
                 '}';
     }
+    public String getInformation() {
+        return super.getInformation()+","+this.capacity;
+    }
 }

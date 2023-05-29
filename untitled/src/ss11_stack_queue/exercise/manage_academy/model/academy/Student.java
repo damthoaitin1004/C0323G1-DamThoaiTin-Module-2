@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Student extends Person {
    private int point;
    private String classes;
-   public Student(){
+   public Student(String s, String s1, boolean s2, int point, String classes){
 
    }
 
@@ -52,5 +52,10 @@ public class Student extends Person {
                 "point=" + point +
                 ", classes='" + classes + '\'' +
                 '}';
+    }
+
+    @Override
+    public String getInformation() {
+        return super.getInformation()+","+this.point+","+this.classes;
     }
 }

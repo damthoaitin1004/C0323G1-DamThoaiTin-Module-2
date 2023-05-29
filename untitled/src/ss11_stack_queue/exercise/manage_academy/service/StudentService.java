@@ -1,5 +1,6 @@
 package ss11_stack_queue.exercise.manage_academy.service;
 
+import ss11_stack_queue.exercise.manage_academy.controller.InputException;
 import ss11_stack_queue.exercise.manage_academy.model.Person;
 import ss11_stack_queue.exercise.manage_academy.model.academy.Student;
 import ss11_stack_queue.exercise.manage_academy.repository.IPersonRepository;
@@ -48,11 +49,18 @@ public class StudentService implements IPersonService {
                 int gender = Integer.parseInt(scanner.nextLine());
                 if (gender == 1) {
                     flag = true;
+                } else if (gender==2) {
+                    break;
+                }else {throw new InputException("Nhập sai chức năng vui lòng nhập lại");
                 }
                 break;
 
-            } catch (NumberFormatException catchNumber) {
+            }catch (InputException i){i.getMessage();
+                System.out.println("Sai định dạng vui lòng nhập lại");}
+            catch (NumberFormatException catchNumber) {
                 System.out.println("Nhập sai rồi xin mời nhập lại");
+            }catch (Exception e){
+                System.out.println("Error");
             }
         }
         System.out.println("Nhập lớp cho học viên: ");
@@ -62,9 +70,17 @@ public class StudentService implements IPersonService {
             try {
                 System.out.print("Nhập điểm cho học viên: ");
                 point = Integer.parseInt(scanner.nextLine());
+                if (point<0){
+                    throw new InputException("Điểm phải là 1 số lớn hơn 0 vui lòng nhập lại");
+                }
                 break;
-            } catch (NumberFormatException numberFormatException) {
+            }catch (InputException i){
+                i.getMessage();
+            }
+            catch (NumberFormatException numberFormatException) {
                 System.out.println("Nhập sai rồi vui lòng nhập lại");
+            }catch (Exception e){
+                System.out.println("Error");
             }
         }
         Person studentsNew = new Student(name, flag, code, point, classes);
@@ -89,10 +105,16 @@ public class StudentService implements IPersonService {
                     if (choice == 1) {
                         studentRepository.removePerson(studentDele);
                         System.out.println("Xóa thành công");
-                    }
-                    break;
-                } catch (NumberFormatException catchChoise) {
+                        break;
+                    } else if (choice==2) {
+                        break;
+                    }else {throw new InputException("Nhập sai chức năng vui lòng nhập lại");}
+
+                }catch (InputException n){n.getMessage();}
+                catch (NumberFormatException catchChoise) {
                     System.out.println("Nhập sai rồi xin mời nhập lại");
+                }catch (Exception e){
+                    System.out.println("Error");
                 }
             }
         }
