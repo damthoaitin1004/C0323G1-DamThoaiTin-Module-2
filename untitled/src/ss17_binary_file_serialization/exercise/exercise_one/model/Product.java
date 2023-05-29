@@ -1,6 +1,7 @@
-package ss17_binary_file_serialization.exercise.WriteFile;
+package ss17_binary_file_serialization.exercise.exercise_one.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Product implements Serializable {
     private String code;
@@ -9,7 +10,7 @@ public class Product implements Serializable {
     private int quantity;
     private String production;
 
-    public Product() {
+    public Product(String newCode, String newName, float newPrice, int newQuantity) {
 
     }
 
@@ -59,6 +60,19 @@ public class Product implements Serializable {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+        Product product = (Product) o;
+        return Float.compare(product.getPrice(), getPrice()) == 0 && getQuantity() == product.getQuantity() && getCode().equals(product.getCode()) && getName().equals(product.getName()) && getProduction().equals(product.getProduction());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCode(), getName(), getPrice(), getQuantity(), getProduction());
     }
 
     @Override

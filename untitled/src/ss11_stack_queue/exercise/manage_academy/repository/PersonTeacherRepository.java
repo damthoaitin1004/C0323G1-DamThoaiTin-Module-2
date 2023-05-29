@@ -13,8 +13,10 @@ public class PersonTeacherRepository implements IPersonRepository{
     }
     private static List<Person> teacher = new ArrayList<>();
     static {
+        teacher=ReadAndWriteFile.readTeacherList("ss11_stack_queue/exercise/manage_academy/repository/file_repository/teacher.csv");
         teacher.add(new Teacher("Hai BĐ",true,"0555","Thực hành"));
         teacher.add(new Teacher("Sơn Tùng ATM",false,"0245","Tấu hài"));
+        ReadAndWriteFile.writeStudentList(teacher,"ss11_stack_queue/exercise/manage_academy/repository/file_repository/teacher.csv");
 
     }
 

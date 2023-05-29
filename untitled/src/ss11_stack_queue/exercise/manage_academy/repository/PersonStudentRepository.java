@@ -16,8 +16,10 @@ public class PersonStudentRepository implements IPersonRepository {
     private static List<Person> student = new ArrayList<>();
 
     static {
+       student = ReadAndWriteFile.readStudentList("E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
         student.add(new Student("Dam Thoai Tin", true, "0325", 9, "0323g1"));
         student.add(new Student("Dam Vinh Hung", false, "03265", 9, "0323g1"));
+        ReadAndWriteFile.writeStudentList(student, "E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
     }
 
 

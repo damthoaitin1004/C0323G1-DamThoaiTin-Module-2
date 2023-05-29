@@ -56,7 +56,7 @@ public class StudentService implements IPersonService {
                 break;
 
             }catch (InputException i){i.getMessage();
-                System.out.println("Sai định dạng vui lòng nhập lại");}
+                System.out.println("Sai định dạng vui lòng nhập l");}
             catch (NumberFormatException catchNumber) {
                 System.out.println("Nhập sai rồi xin mời nhập lại");
             }catch (Exception e){
