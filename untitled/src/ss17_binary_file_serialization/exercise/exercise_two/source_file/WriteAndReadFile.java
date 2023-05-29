@@ -13,7 +13,7 @@ public class WriteAndReadFile {
         customerList.add(customerA);
         customerList.add(customerB);
         customerList.add(customerC);
-        WriteCustomerFromFile(customerList, "ss17_binary_file_serialization/exercise/file/customer.dat");
+        WriteCustomerFromFile(customerList, "ss17_binary_file_serialization/exercise/exercise_two/customer.dat");
     }
 
         public static void WriteCustomerFromFile(List<Customer> customer,String path) {
