@@ -2,9 +2,8 @@ package ss11_stack_queue.exercise.manage_academy.repository;
 
 import ss11_stack_queue.exercise.manage_academy.model.Person;
 import ss11_stack_queue.exercise.manage_academy.model.academy.Student;
-import ss11_stack_queue.exercise.manage_academy.repository.file_repository.WriteFile;
+import ss11_stack_queue.exercise.manage_academy.repository.file_repository.ReadAndWriteFile;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,9 +18,6 @@ public class PersonStudentRepository implements IPersonRepository {
     static {
         student.add(new Student("Dam Thoai Tin", true, "0325", 9, "0323g1"));
         student.add(new Student("Dam Vinh Hung", false, "03265", 9, "0323g1"));
-        WriteFile.writeStudentList(student,"ss11_stack_queue/exercise/manage_academy/repository/file_repository/student.csv");
-
-
     }
 
 
@@ -32,8 +28,9 @@ public class PersonStudentRepository implements IPersonRepository {
 
     @Override
     public void addPerson(Person person) {
-        student.add(person);
-        WriteFile.writeStudentList(student, "ss11_stack_queue/exercise/manage_academy/repository/file_repository/student.csv");
+         student = ReadAndWriteFile.readStudentList("E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
+         student.add(person);
+        ReadAndWriteFile.writeStudentList(student, "E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
 
     }
 
@@ -50,8 +47,9 @@ public class PersonStudentRepository implements IPersonRepository {
 
     @Override
     public void removePerson(Person person) {
+        student = ReadAndWriteFile.readStudentList("E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
         student.remove(person);
-        WriteFile.writeStudentList(student, "ss11_stack_queue/exercise/manage_academy/repository/file_repository/teacher.csv");
+        ReadAndWriteFile.writeStudentList(student, "E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
     }
 
 

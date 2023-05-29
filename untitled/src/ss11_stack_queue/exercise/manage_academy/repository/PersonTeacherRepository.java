@@ -2,12 +2,8 @@ package ss11_stack_queue.exercise.manage_academy.repository;
 
 import ss11_stack_queue.exercise.manage_academy.model.Person;
 import ss11_stack_queue.exercise.manage_academy.model.academy.Teacher;
-import ss11_stack_queue.exercise.manage_academy.repository.file_repository.WriteFile;
+import ss11_stack_queue.exercise.manage_academy.repository.file_repository.ReadAndWriteFile;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +15,7 @@ public class PersonTeacherRepository implements IPersonRepository{
     static {
         teacher.add(new Teacher("Hai BĐ",true,"0555","Thực hành"));
         teacher.add(new Teacher("Sơn Tùng ATM",false,"0245","Tấu hài"));
-     WriteFile.writeStudentList(teacher, "ss11_stack_queue/exercise/manage_academy/repository/file_repository/teacher.csv");
+
     }
 
     @Override
@@ -29,8 +25,10 @@ public class PersonTeacherRepository implements IPersonRepository{
 
     @Override
     public void addPerson(Person person) {
-       teacher.add(person);
-        WriteFile.writeStudentList(teacher, "ss11_stack_queue/exercise/manage_academy/repository/file_repository/teacher.csv");
+
+        teacher = ReadAndWriteFile.readTeacherList("ss11_stack_queue/exercise/manage_academy/repository/file_repository/teacher.csv");
+        teacher.add(person);
+        ReadAndWriteFile.writeStudentList(teacher, "ss11_stack_queue/exercise/manage_academy/repository/file_repository/teacher.csv");
     }
 
     @Override
@@ -45,8 +43,10 @@ public class PersonTeacherRepository implements IPersonRepository{
 
     @Override
     public void removePerson(Person person) {
-           teacher.remove(person);
-       WriteFile.writeStudentList(teacher, "ss11_stack_queue/exercise/manage_academy/repository/file_repository/teacher.csv");
+
+        teacher = ReadAndWriteFile.readTeacherList("ss11_stack_queue/exercise/manage_academy/repository/file_repository/teacher.csv");
+        teacher.remove(person);
+        ReadAndWriteFile.writeStudentList(teacher, "ss11_stack_queue/exercise/manage_academy/repository/file_repository/teacher.csv");
     }
 
 }

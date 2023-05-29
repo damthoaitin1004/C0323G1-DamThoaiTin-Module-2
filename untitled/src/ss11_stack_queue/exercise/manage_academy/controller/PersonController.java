@@ -119,6 +119,8 @@ public class PersonController {
                             System.out.println("Chức năng không tồn tại vui lòng nhập lại");
                         }catch (NumberFormatException m){
                             System.out.println("Người dùng nhập sai định dạng xin mời nhập lại");
+                        }catch (Exception e){
+                            System.out.println("Error");
                         }
                     }
                 }

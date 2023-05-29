@@ -54,8 +54,7 @@ public class Student extends Person {
                 '}';
     }
 
-    @Override
     public String getInformation() {
-        return super.getInformation()+","+this.point+","+this.classes;
+       return super.getInformation()+","+this.point+","+this.classes;
     }
 }

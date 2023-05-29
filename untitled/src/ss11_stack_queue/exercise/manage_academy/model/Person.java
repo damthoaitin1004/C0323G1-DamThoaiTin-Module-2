@@ -46,7 +46,8 @@ public class Person {
                 ", codePerson='" + codePerson + '\''
                 ;
     }
-    public String getInformation(){
-        return this.codePerson+","+this.name+","+this.gender;
+    public String getInformation() {
+      return this.name+","+this.gender+","+this.codePerson;
     }
+
 }
