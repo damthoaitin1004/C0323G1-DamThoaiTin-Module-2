@@ -23,7 +23,6 @@ public class WriteFile {
 
     public static List<Product> ReadProductFromFile(String path) {
         List<Product> productList = null;
-
         try {
             FileInputStream fileInputStream = new FileInputStream(path);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
