@@ -42,7 +42,6 @@ public class ReadAndWriteFile {
        List<Person> studentList = new ArrayList<>();
        File file = new File(path);
        try {
-
            FileReader fileReader = new FileReader(file);
            BufferedReader bufferedReader = new BufferedReader(fileReader);
            String line = null;
@@ -63,7 +62,6 @@ public class ReadAndWriteFile {
         List<Person> teacherList = new ArrayList<>();
         File file = new File(path);
         try {
-
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = null;
