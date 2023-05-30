@@ -1,8 +1,7 @@
 package ss11_stack_queue.exercise.manage_academy.repository;
 
 import ss11_stack_queue.exercise.manage_academy.model.Person;
-import ss11_stack_queue.exercise.manage_academy.model.academy.Student;
-import ss11_stack_queue.exercise.manage_academy.repository.file_repository.ReadAndWriteFile;
+import ss11_stack_queue.exercise.manage_academy.common.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,30 +13,27 @@ public class PersonStudentRepository implements IPersonRepository {
     }
 
     private static List<Person> student = new ArrayList<>();
-//
-//    static {
-//        student = ReadAndWriteFile.readStudentList("E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
-//    }
 
 
     @Override
     public List<Person> getAll() {
-        student = ReadAndWriteFile.readStudentList("E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
+        student.clear();
+        student = ReadAndWriteFile.readStudentList("ss11_stack_queue/exercise/manage_academy/file_repository/student.csv");
         return student;
     }
 
     @Override
     public void addPerson(Person person) {
-         student = ReadAndWriteFile.readStudentList("E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
+         student = getAll();
          student.add(person);
-        ReadAndWriteFile.writeStudentList(student, "E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
+        ReadAndWriteFile.writeStudentList(student,"ss11_stack_queue/exercise/manage_academy/file_repository/student.csv");
 
     }
 
 
     @Override
     public Person getByCode(String code) {
-        student = ReadAndWriteFile.readStudentList("E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
+        student = getAll();
         for (Person person : student) {
             if (person.getCodePerson().equals(code)) {
                 return person;
@@ -48,9 +44,9 @@ public class PersonStudentRepository implements IPersonRepository {
 
     @Override
     public void removePerson(Person person) {
-        student = ReadAndWriteFile.readStudentList("E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
+        student = getAll();
         student.remove(person);
-        ReadAndWriteFile.writeStudentList(student, "E:\\codegym\\module_2\\untitled\\src\\ss11_stack_queue\\exercise\\manage_academy\\repository\\file_repository\\student.csv");
+        ReadAndWriteFile.writeStudentList(student,"ss11_stack_queue/exercise/manage_academy/file_repository/student.csv");
     }
 
 
