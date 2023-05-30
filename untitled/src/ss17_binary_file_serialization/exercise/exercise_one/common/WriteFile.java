@@ -1,4 +1,4 @@
-package ss17_binary_file_serialization.exercise.exercise_one.WriteFile;
+package ss17_binary_file_serialization.exercise.exercise_one.data;
 
 import ss17_binary_file_serialization.exercise.exercise_one.model.Product;
 
