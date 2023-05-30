@@ -62,7 +62,6 @@ public class ReadAndWriteFile {
     }
     public static List<Person> readTeacherList(String path){
         List<Person> teacherList = new ArrayList<>();
-
         try {
             File file = new File(path);
             FileReader fileReader ;

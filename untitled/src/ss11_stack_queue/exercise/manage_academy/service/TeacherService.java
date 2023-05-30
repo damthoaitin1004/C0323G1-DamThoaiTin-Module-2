@@ -69,15 +69,15 @@ public class TeacherService implements IPersonService {
 
     @Override
     public void deletePerson() {
-        System.out.print("Bạn muốn xóa học viên nào. Vui lòng nhập mã học viên: ");
+        System.out.print("Bạn muốn xóa giáo viên nào. Vui lòng nhập mã giáo viên: ");
         String code = scanner.nextLine();
         Person teacherDele = teacherRepository.getByCode(code);
         if (teacherDele == null) {
-            System.out.println("Không có sản phẩm");
+            System.out.println("Không có giáo viên");
         } else {
             while (true){
                 try {
-                    System.out.println("Bạn có muốn xóa học viên với tên: " + teacherDele.getName());
+                    System.out.println("Bạn có muốn xóa giáo viên với tên: " + teacherDele.getName());
                     System.out.println("1. Xóa");
                     System.out.println("2. Suy nghĩ lại");
                     int choice = Integer.parseInt(scanner.nextLine());
