@@ -22,16 +22,15 @@ public class PersonTeacherRepository implements IPersonRepository {
 
     @Override
     public void addPerson(Person person) {
-        teacher = ReadAndWriteFile.readTeacherList("ss11_stack_queue/exercise/manage_academy/file_repository/teacher.csv");
+        teacher = getAll();
         teacher.add(person);
         ReadAndWriteFile.writeStudentList(teacher, "ss11_stack_queue/exercise/manage_academy/file_repository/teacher.csv");
-
     }
 
 
     @Override
     public Person getByCode(String code) {
-        teacher = ReadAndWriteFile.readTeacherList("ss11_stack_queue/exercise/manage_academy/file_repository/teacher.csv");
+        teacher = getAll();
         for (Person person : teacher) {
             if (person.getCodePerson().equals(code)) {
                 return person;
@@ -42,7 +41,7 @@ public class PersonTeacherRepository implements IPersonRepository {
 
     @Override
     public void removePerson(Person person) {
-        teacher = ReadAndWriteFile.readTeacherList("ss11_stack_queue/exercise/manage_academy/file_repository/teacher.csv");
+        teacher =getAll();
         teacher.remove(person);
         ReadAndWriteFile.writeStudentList(teacher, "ss11_stack_queue/exercise/manage_academy/file_repository/teacher.csv");
     }
