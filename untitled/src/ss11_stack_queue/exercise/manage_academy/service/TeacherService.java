@@ -1,6 +1,6 @@
 package ss11_stack_queue.exercise.manage_academy.service;
 
-import ss11_stack_queue.exercise.manage_academy.controller.InputException;
+import ss11_stack_queue.exercise.manage_academy.check_input.InputException;
 import ss11_stack_queue.exercise.manage_academy.model.Person;
 import ss11_stack_queue.exercise.manage_academy.model.academy.Teacher;
 import ss11_stack_queue.exercise.manage_academy.repository.IPersonRepository;
@@ -84,10 +84,18 @@ public class TeacherService implements IPersonService {
                     if (choice == 1) {
                         teacherRepository.removePerson(teacherDele);
                         System.out.println("Xóa thành công");
+                    } else if (choice == 2) {
+                        break;
+                    } else {
+                        throw new InputException("Sai chức năng vui lòng nhập lại");
                     }
                     break;
-                } catch (NumberFormatException choseFalse){
+                } catch (InputException m) {
+                    m.getMessage();
+                } catch (NumberFormatException choseFalse) {
                     System.out.println("Nhập sai rồi xin mời nhập lại");
+                }catch (Exception e){
+                    System.out.println("Error");
                 }
           }
         }

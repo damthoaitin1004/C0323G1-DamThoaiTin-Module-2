@@ -1,5 +1,6 @@
 package ss11_stack_queue.exercise.manage_academy.controller;
 
+import ss11_stack_queue.exercise.manage_academy.check_input.InputException;
 import ss11_stack_queue.exercise.manage_academy.service.IPersonService;
 import ss11_stack_queue.exercise.manage_academy.service.StudentService;
 import ss11_stack_queue.exercise.manage_academy.service.TeacherService;

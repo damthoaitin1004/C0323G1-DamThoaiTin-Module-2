@@ -1,7 +1,7 @@
 package ss11_stack_queue.exercise.manage_academy.repository;
 
-import ss11_stack_queue.exercise.manage_academy.model.Person;
 import ss11_stack_queue.exercise.manage_academy.common.ReadAndWriteFile;
+import ss11_stack_queue.exercise.manage_academy.model.Person;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class PersonTeacherRepository implements IPersonRepository {
     public void addPerson(Person person) {
         teacher = getAll();
         teacher.add(person);
-        ReadAndWriteFile.writeStudentList(teacher, "ss11_stack_queue/exercise/manage_academy/file_repository/teacher.csv");
+        ReadAndWriteFile.writeStudentList(teacher,"ss11_stack_queue/exercise/manage_academy/file_repository/teacher.csv");
     }
 
 
@@ -41,7 +41,7 @@ public class PersonTeacherRepository implements IPersonRepository {
 
     @Override
     public void removePerson(Person person) {
-        teacher =getAll();
+        teacher = getAll();
         teacher.remove(person);
         ReadAndWriteFile.writeStudentList(teacher, "ss11_stack_queue/exercise/manage_academy/file_repository/teacher.csv");
     }
