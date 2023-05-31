@@ -30,6 +30,7 @@ public class PersonTeacherRepository implements IPersonRepository {
 
     @Override
     public Person getByCode(String code) {
+        teacher.clear();
         teacher = getAll();
         for (Person person : teacher) {
             if (person.getCodePerson().equals(code)) {

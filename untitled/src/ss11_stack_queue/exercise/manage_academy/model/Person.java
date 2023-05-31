@@ -1,5 +1,7 @@
 package ss11_stack_queue.exercise.manage_academy.model;
 
+import java.util.Objects;
+
 public class Person {
     private String name;
     private boolean gender;
@@ -11,6 +13,19 @@ public class Person {
 
         this.gender = gender;
         this.codePerson = codePerson;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+        Person person = (Person) o;
+        return getCodePerson().equals(person.getCodePerson());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCodePerson());
     }
 
     public String getCodePerson() {

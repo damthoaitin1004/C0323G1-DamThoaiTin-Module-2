@@ -10,23 +10,13 @@ private String capacity;
     public Teacher() {
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Teacher)) return false;
-        Teacher teacher = (Teacher) o;
-        return getCapacity() == teacher.getCapacity();
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getCapacity());
-    }
 
     public Teacher(String name, boolean gender, String codePerson, String capacity) {
         super(name, gender, codePerson);
         this.capacity = capacity;
     }
+
 
     public String getCapacity() {
         return capacity;
